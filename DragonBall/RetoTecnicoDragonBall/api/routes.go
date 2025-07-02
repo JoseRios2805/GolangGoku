@@ -12,7 +12,6 @@ type HandlerDto struct {
 	dragonBallHandler handler.IDragonBallHandler
 }
 
-// @contact.email  rai.delgado@encora.com
 func routes(handlers *HandlerDto) *gin.Engine {
 
 	gin.SetMode(gin.ReleaseMode) //evaluate use var config environment
