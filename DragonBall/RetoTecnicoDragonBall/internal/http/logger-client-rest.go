@@ -93,8 +93,6 @@ func (l LoggingRoundTripper) saveLogsRequest(bodyInBytes []byte, req *http.Reque
 		bodyIn = ""
 	}
 
-	//l.logger.Info(fmt.Sprintf("#(%d)-REQUEST|METHOD: %s|PATH: %s|PAYLOAD: %s", l.logger.GetCounter(), req.Method, path, bodyIn))
-
 }
 
 func (l LoggingRoundTripper) saveLogsResponse(req *http.Request, wg *sync.WaitGroup, respChannel <-chan loggerResponse) {
@@ -114,7 +112,6 @@ func (l LoggingRoundTripper) saveLogsResponse(req *http.Request, wg *sync.WaitGr
 	} else {
 		bodyOut = ""
 	}
-	//var loggerOut = fmt.Sprintf("#(%d)-RESPONSE|LATENCE:%s |METHOD:%s |PATH:%s |STATUS:%s |PAYLOAD:%s", l.logger.GetCounter(), resProxy.latency, req.Method, path, strconv.Itoa(resProxy.res.StatusCode), bodyOut)
 
 	if resProxy.res.StatusCode >= http.StatusOK && resProxy.res.StatusCode < http.StatusBadRequest {
 		//l.logger.Info(loggerOut)
